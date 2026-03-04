@@ -186,7 +186,7 @@ Full [API documentation](https://timefyi.com/developers/) at timefyi.com.
 
 ## FYIPedia Developer Tools
 
-Part of the [FYIPedia](https://fyipedia.com/) open-source developer tools ecosystem:
+Part of the [FYIPedia](https://github.com/fyipedia) open-source developer tools ecosystem:
 
 | Package | Description |
 |---------|-------------|
