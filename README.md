@@ -8,6 +8,10 @@ Pure Python timezone engine for developers. Look up current times in any [IANA t
 
 > **Check current times worldwide at [timefyi.com](https://timefyi.com/)** -- [world clock](https://timefyi.com/worldclock/), timezone comparisons, and business hours planning.
 
+<p align="center">
+  <img src="demo.gif" alt="timefyi CLI demo" width="800">
+</p>
+
 ## Install
 
 ```bash
