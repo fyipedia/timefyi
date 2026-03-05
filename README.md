@@ -12,6 +12,26 @@ Pure Python timezone engine for developers. Look up current times in any [IANA t
   <img src="demo.gif" alt="timefyi CLI demo" width="800">
 </p>
 
+## Table of Contents
+
+- [Install](#install)
+- [Quick Start](#quick-start)
+- [Understanding Timezones](#understanding-timezones)
+- [Business Hours Across Timezones](#business-hours-across-timezones)
+- [Sunrise & Sunset](#sunrise--sunset)
+- [Command-Line Interface](#command-line-interface)
+- [MCP Server (Claude, Cursor, Windsurf)](#mcp-server-claude-cursor-windsurf)
+- [REST API Client](#rest-api-client)
+- [API Reference](#api-reference)
+  - [Current Time & Conversion](#current-time--conversion)
+  - [Business Hours & Comparison](#business-hours--comparison)
+  - [Sunrise & Sunset](#sunrise--sunset-1)
+  - [Formatting](#formatting)
+- [Features](#features)
+- [Learn More About Time Zones](#learn-more-about-time-zones)
+- [FYIPedia Developer Tools](#fyipedia-developer-tools)
+- [License](#license)
+
 ## Install
 
 ```bash
@@ -188,29 +208,32 @@ Full [API documentation](https://timefyi.com/developers/) at timefyi.com.
 - **Zero dependencies** -- core engine uses only stdlib `zoneinfo` and `datetime`
 - **Type-safe** -- full type annotations, `py.typed` marker (PEP 561)
 
+## Learn More About Time Zones
+
+- **Tools**: [World Clock](https://timefyi.com/) · [Time Zone Converter](https://timefyi.com/tools/converter/) · [Meeting Planner](https://timefyi.com/tools/meeting/)
+- **Browse**: [Time Zones](https://timefyi.com/timezone/) · [Countries](https://timefyi.com/country/)
+- **Guides**: [Glossary](https://timefyi.com/glossary/) · [Blog](https://timefyi.com/blog/)
+- **API**: [REST API Docs](https://timefyi.com/developers/) · [OpenAPI Spec](https://timefyi.com/api/openapi.json)
+
 ## FYIPedia Developer Tools
 
-Part of the [FYIPedia](https://github.com/fyipedia) open-source developer tools ecosystem:
+Part of the [FYIPedia](https://fyipedia.com) open-source developer tools ecosystem.
 
-| Package | Description |
-|---------|-------------|
-| [colorfyi](https://pypi.org/project/colorfyi/) | Color conversion, [WCAG contrast](https://colorfyi.com/tools/contrast-checker/), harmonies, shades -- [colorfyi.com](https://colorfyi.com/) |
-| [emojifyi](https://pypi.org/project/emojifyi/) | Emoji lookup, search, encoding -- [emojifyi.com](https://emojifyi.com/) |
-| [symbolfyi](https://pypi.org/project/symbolfyi/) | Symbol encoding, Unicode properties -- [symbolfyi.com](https://symbolfyi.com/) |
-| [unicodefyi](https://pypi.org/project/unicodefyi/) | Unicode character info, 17 encodings -- [unicodefyi.com](https://unicodefyi.com/) |
-| [fontfyi](https://pypi.org/project/fontfyi/) | Google Fonts metadata, CSS, pairings -- [fontfyi.com](https://fontfyi.com/) |
-| [distancefyi](https://pypi.org/project/distancefyi/) | Haversine distance, bearing, travel times -- [distancefyi.com](https://distancefyi.com/) |
-| **[timefyi](https://pypi.org/project/timefyi/)** | **Timezone ops, time differences, business hours -- [timefyi.com](https://timefyi.com/)** |
-| [namefyi](https://pypi.org/project/namefyi/) | Korean romanization, Five Elements -- [namefyi.com](https://namefyi.com/) |
-| [unitfyi](https://pypi.org/project/unitfyi/) | Unit conversion, 200 units, 20 categories -- [unitfyi.com](https://unitfyi.com/) |
-| [holidayfyi](https://pypi.org/project/holidayfyi/) | Holiday dates, Easter calculation -- [holidayfyi.com](https://holidayfyi.com/) |
-
-## Links
-
-- [World Clock](https://timefyi.com/worldclock/) -- Current times in cities worldwide
-- [REST API Documentation](https://timefyi.com/developers/) -- Free API
-- [npm Package](https://www.npmjs.com/package/timefyi) -- TypeScript version
-- [Source Code](https://github.com/fyipedia/timefyi) -- MIT licensed
+| Package | PyPI | npm | Description |
+|---------|------|-----|-------------|
+| colorfyi | [PyPI](https://pypi.org/project/colorfyi/) | [npm](https://www.npmjs.com/package/@fyipedia/colorfyi) | Color conversion, WCAG contrast, harmonies -- [colorfyi.com](https://colorfyi.com/) |
+| emojifyi | [PyPI](https://pypi.org/project/emojifyi/) | [npm](https://www.npmjs.com/package/emojifyi) | Emoji encoding & metadata for 3,781 emojis -- [emojifyi.com](https://emojifyi.com/) |
+| symbolfyi | [PyPI](https://pypi.org/project/symbolfyi/) | [npm](https://www.npmjs.com/package/symbolfyi) | Symbol encoding in 11 formats -- [symbolfyi.com](https://symbolfyi.com/) |
+| unicodefyi | [PyPI](https://pypi.org/project/unicodefyi/) | [npm](https://www.npmjs.com/package/unicodefyi) | Unicode lookup with 17 encodings -- [unicodefyi.com](https://unicodefyi.com/) |
+| fontfyi | [PyPI](https://pypi.org/project/fontfyi/) | [npm](https://www.npmjs.com/package/fontfyi) | Google Fonts metadata & CSS -- [fontfyi.com](https://fontfyi.com/) |
+| distancefyi | [PyPI](https://pypi.org/project/distancefyi/) | [npm](https://www.npmjs.com/package/distancefyi) | Haversine distance & travel times -- [distancefyi.com](https://distancefyi.com/) |
+| **timefyi** | [PyPI](https://pypi.org/project/timefyi/) | [npm](https://www.npmjs.com/package/timefyi) | Timezone ops & business hours -- [timefyi.com](https://timefyi.com/) |
+| namefyi | [PyPI](https://pypi.org/project/namefyi/) | [npm](https://www.npmjs.com/package/namefyi) | Korean romanization & Five Elements -- [namefyi.com](https://namefyi.com/) |
+| unitfyi | [PyPI](https://pypi.org/project/unitfyi/) | [npm](https://www.npmjs.com/package/unitfyi) | Unit conversion, 220 units -- [unitfyi.com](https://unitfyi.com/) |
+| holidayfyi | [PyPI](https://pypi.org/project/holidayfyi/) | [npm](https://www.npmjs.com/package/holidayfyi) | Holiday dates & Easter calculation -- [holidayfyi.com](https://holidayfyi.com/) |
+| cocktailfyi | [PyPI](https://pypi.org/project/cocktailfyi/) | -- | Cocktail ABV, calories, flavor -- [cocktailfyi.com](https://cocktailfyi.com/) |
+| fyipedia | [PyPI](https://pypi.org/project/fyipedia/) | -- | Unified CLI: `fyi color info FF6B35` -- [fyipedia.com](https://fyipedia.com/) |
+| fyipedia-mcp | [PyPI](https://pypi.org/project/fyipedia-mcp/) | -- | Unified MCP hub for AI assistants -- [fyipedia.com](https://fyipedia.com/) |
 
 ## License
 
