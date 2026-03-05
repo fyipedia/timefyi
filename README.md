@@ -68,49 +68,90 @@ converted = convert_time(datetime(2026, 3, 4, 14, 30), "America/New_York", "Asia
 
 Timezones are governed by the [IANA Time Zone Database](https://www.iana.org/time-zones) (also called `tzdata` or the Olson database), maintained by a volunteer community and released several times per year. Each timezone is identified by a region/city string like `"Asia/Seoul"` or `"America/New_York"` rather than abbreviations like "KST" or "EST" -- because abbreviations are ambiguous ("CST" could mean Central Standard Time, China Standard Time, or Cuba Standard Time).
 
+| Abbreviation | Ambiguous? | Possible Meanings | Use IANA Instead |
+|-------------|-----------|-------------------|-----------------|
+| CST | Yes | Central Standard (US), China Standard, Cuba Standard | `America/Chicago`, `Asia/Shanghai`, `America/Havana` |
+| IST | Yes | India Standard, Ireland Standard, Israel Standard | `Asia/Kolkata`, `Europe/Dublin`, `Asia/Jerusalem` |
+| EST | Yes | Eastern Standard (US), Eastern Standard (Australia) | `America/New_York`, `Australia/Sydney` |
+| BST | Yes | British Summer Time, Bangladesh Standard Time | `Europe/London`, `Asia/Dhaka` |
+| PST | No | Pacific Standard Time | `America/Los_Angeles` |
+| KST | No | Korea Standard Time | `Asia/Seoul` |
+
 ```python
 from timefyi import get_current_time
 
-# Always use IANA identifiers, not abbreviations
-seoul = get_current_time("Asia/Seoul")          # UTC+9, no DST
+# Always use IANA identifiers -- abbreviations are ambiguous
+seoul = get_current_time("Asia/Seoul")          # UTC+9, no DST observed
 new_york = get_current_time("America/New_York") # UTC-5 (EST) or UTC-4 (EDT)
 london = get_current_time("Europe/London")      # UTC+0 (GMT) or UTC+1 (BST)
 
-# DST transitions change the offset
+# DST transitions change the UTC offset automatically
 # New York is UTC-5 in winter, UTC-4 in summer
-# The "America/New_York" identifier handles this automatically
+# The IANA identifier handles this transition seamlessly
 ```
 
 A UTC offset is the number of hours (and sometimes minutes) added to or subtracted from Coordinated Universal Time. Offsets range from UTC-12:00 to UTC+14:00, with several zones at 30- or 45-minute intervals (e.g., India at UTC+5:30, Nepal at UTC+5:45, Chatham Islands at UTC+12:45).
 
+| Offset | Timezone Example | Major City |
+|--------|-----------------|------------|
+| UTC-12:00 | AoE (Baker Island) | -- |
+| UTC-8:00 | America/Los_Angeles | Los Angeles |
+| UTC-5:00 | America/New_York | New York |
+| UTC+0:00 | Europe/London | London |
+| UTC+1:00 | Europe/Paris | Paris, Berlin |
+| UTC+5:30 | Asia/Kolkata | Mumbai, Delhi |
+| UTC+5:45 | Asia/Kathmandu | Kathmandu |
+| UTC+8:00 | Asia/Shanghai | Beijing, Singapore |
+| UTC+9:00 | Asia/Seoul | Seoul, Tokyo |
+| UTC+12:45 | Pacific/Chatham | Chatham Islands |
+| UTC+14:00 | Pacific/Kiritimati | Line Islands |
+
 Daylight Saving Time (DST) shifts the local clock forward by one hour during summer months. Not all countries observe DST -- most of Africa, Asia, and South America do not. When DST transitions occur, they happen at different dates in different countries, making timezone arithmetic non-trivial.
+
+Learn more: [Browse Time Zones](https://timefyi.com/timezone/) · [World Clock](https://timefyi.com/worldclock/) · [Cities](https://timefyi.com/city/)
 
 ## Business Hours Across Timezones
 
 Finding overlapping work hours is one of the most common timezone challenges for distributed teams. A team spanning New York, London, and Seoul has only a narrow window where all three are in standard business hours (9:00-17:00 local).
+
+| Team Pair | UTC Overlap Window | Local Overlap | Overlap Hours |
+|-----------|-------------------|---------------|--------------|
+| NYC + London | 14:00-17:00 UTC | NYC 9-12, London 14-17 | 3 hours |
+| NYC + Seoul | 23:00-01:00 UTC | NYC 18-20, Seoul 8-10 | ~2 hours |
+| London + Seoul | 00:00-08:00 UTC | London 0-8, Seoul 9-17 | 0 hours (no standard overlap) |
+| NYC + London + Seoul | -- | -- | 0 hours (requires flex scheduling) |
 
 ```python
 from timefyi import get_business_hours_overlap, get_hourly_comparison
 
 # Find UTC hours where all timezones are in business hours (9-17 local)
 overlap = get_business_hours_overlap(["America/New_York", "Europe/London", "Asia/Seoul"])
-# Returns list of overlapping UTC hours
+# Returns list of overlapping UTC hours -- useful for meeting scheduling
 
-# Side-by-side hour mapping
+# Side-by-side hourly comparison for two offices
 comparison = get_hourly_comparison("America/New_York", "Asia/Seoul")
 # Shows what each hour in New York corresponds to in Seoul
 ```
 
+Learn more: [Meeting Planner](https://timefyi.com/tools/meeting/) · [Time Zone Converter](https://timefyi.com/tools/converter/) · [Countries](https://timefyi.com/country/)
+
 ## Sunrise & Sunset
+
+Sunrise and sunset times depend on geographic latitude, longitude, and the date. At the equator, day length varies by only ~30 minutes throughout the year. At 60 degrees latitude (e.g., Helsinki, Anchorage), day length swings from ~6 hours in winter to ~18 hours in summer. The `[sun]` extra uses the `astral` library for astronomical calculations including dawn (civil twilight), sunrise, sunset, and dusk.
 
 ```python
 # Requires: pip install "timefyi[sun]"
 from timefyi import get_sun_info
 
+# Sunrise and sunset for Seoul, South Korea
 sun = get_sun_info(37.5665, 126.978, "Asia/Seoul")
-sun.sunrise    # datetime — sunrise time
-sun.sunset     # datetime — sunset time
+sun.sunrise    # datetime -- when the sun crosses the horizon
+sun.sunset     # datetime -- evening sunset time
+sun.dawn       # datetime -- civil twilight begins (sun 6 degrees below horizon)
+sun.dusk       # datetime -- civil twilight ends
 ```
+
+Learn more: [World Clock](https://timefyi.com/worldclock/) · [Cities](https://timefyi.com/city/) · [Glossary](https://timefyi.com/glossary/)
 
 ## Command-Line Interface
 
