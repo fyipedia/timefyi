@@ -46,6 +46,10 @@ Add to your `claude_desktop_config.json`:
 - Converting specific times between timezones
 - Looking up sunrise and sunset times
 
+## Demo
+
+![TimeFYI CLI Demo](https://raw.githubusercontent.com/fyipedia/timefyi/main/demo.gif)
+
 ## Links
 
 - [World Clock](https://timefyi.com/) -- Current time in every timezone
