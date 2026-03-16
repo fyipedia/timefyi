@@ -1,6 +1,6 @@
 # timefyi
 
-[![PyPI](https://img.shields.io/pypi/v/timefyi)](https://pypi.org/project/timefyi/)
+[![PyPI version](https://agentgif.com/badge/pypi/timefyi/version.svg)](https://pypi.org/project/timefyi/)
 [![Python](https://img.shields.io/pypi/pyversions/timefyi)](https://pypi.org/project/timefyi/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
