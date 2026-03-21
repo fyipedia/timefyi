@@ -108,9 +108,7 @@ A UTC offset is the number of hours (and sometimes minutes) added to or subtract
 
 Daylight Saving Time (DST) shifts the local clock forward by one hour during summer months. Not all countries observe DST -- most of Africa, Asia, and South America do not. When DST transitions occur, they happen at different dates in different countries, making timezone arithmetic non-trivial.
 
-Learn more: [Browse Time Zones](https://timefyi.com/timezone/) · [World Clock](https://timefyi.com/worldclock/) · [Cities](https://timefyi.com/city/)
-
-## Business Hours Across Timezones
+Learn more: [Browse Time Zones](https://timefyi.com/timezone/) · [World Clock](https://timefyi.com/worldclock/) · ## Business Hours Across Timezones
 
 Finding overlapping work hours is one of the most common timezone challenges for distributed teams. A team spanning New York, London, and Seoul has only a narrow window where all three are in standard business hours (9:00-17:00 local).
 
@@ -133,7 +131,7 @@ comparison = get_hourly_comparison("America/New_York", "Asia/Seoul")
 # Shows what each hour in New York corresponds to in Seoul
 ```
 
-Learn more: [Meeting Planner](https://timefyi.com/tools/meeting/) · [Time Zone Converter](https://timefyi.com/tools/converter/) · [Countries](https://timefyi.com/country/)
+Learn more: [Time Zone Converter](https://timefyi.com/tools/converter/) · [Countries](https://timefyi.com/country/)
 
 ## Sunrise & Sunset
 
@@ -151,7 +149,7 @@ sun.dawn       # datetime -- civil twilight begins (sun 6 degrees below horizon)
 sun.dusk       # datetime -- civil twilight ends
 ```
 
-Learn more: [World Clock](https://timefyi.com/worldclock/) · [Cities](https://timefyi.com/city/) · [Glossary](https://timefyi.com/glossary/)
+Learn more: [World Clock](https://timefyi.com/worldclock/) · [Glossary](https://timefyi.com/glossary/)
 
 ## Command-Line Interface
 
@@ -251,10 +249,8 @@ Full [API documentation](https://timefyi.com/developers/) at timefyi.com.
 
 ## Learn More About Time Zones
 
-- **Tools**: [World Clock](https://timefyi.com/) · [Time Zone Converter](https://timefyi.com/tools/converter/) · [Meeting Planner](https://timefyi.com/tools/meeting/)
-- **Browse**: [Time Zones](https://timefyi.com/timezone/) · [Countries](https://timefyi.com/country/)
-- **Guides**: [Glossary](https://timefyi.com/glossary/) · [Blog](https://timefyi.com/blog/)
-- **API**: [REST API Docs](https://timefyi.com/developers/) · [OpenAPI Spec](https://timefyi.com/api/openapi.json)
+- **Tools**: [World Clock](https://timefyi.com/) · [Time Zone Converter](https://timefyi.com/tools/converter/) · - **Browse**: [Time Zones](https://timefyi.com/timezone/) · [Countries](https://timefyi.com/country/)
+- **Guides**: [Glossary](https://timefyi.com/glossary/) · - **API**: [REST API Docs](https://timefyi.com/developers/) · [OpenAPI Spec](https://timefyi.com/api/openapi.json)
 
 ## Utility FYI Family
 
