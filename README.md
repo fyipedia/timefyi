@@ -264,6 +264,17 @@ Part of the [FYIPedia](https://fyipedia.com) open-source developer tools ecosyst
 | namefyi | [PyPI](https://pypi.org/project/namefyi/) | [npm](https://www.npmjs.com/package/namefyi) | Korean romanization & Five Elements -- [namefyi.com](https://namefyi.com/) |
 | distancefyi | [PyPI](https://pypi.org/project/distancefyi/) | [npm](https://www.npmjs.com/package/distancefyi) | Haversine distance & travel times -- [distancefyi.com](https://distancefyi.com/) |
 
+## Embed Widget
+
+Embed [TimeFYI](https://timefyi.com) widgets on any website with [timefyi-embed](https://widget.timefyi.com):
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/timefyi-embed@1/dist/embed.min.js"></script>
+<div data-timefyi="entity" data-slug="example"></div>
+```
+
+Zero dependencies · Shadow DOM · 4 themes (light/dark/sepia/auto) · [Widget docs](https://widget.timefyi.com)
+
 ## License
 
 MIT
