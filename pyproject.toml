@@ -1,6 +1,6 @@
 [project]
 name = "timefyi"
-version = "0.1.3"
+version = "0.1.4"
 description = "Pure Python timezone engine — current time, time differences, business hours overlap, sunrise/sunset. Zero dependencies core."
 readme = "README.md"
 license = "MIT"
