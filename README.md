@@ -275,6 +275,16 @@ Embed [TimeFYI](https://timefyi.com) widgets on any website with [timefyi-embed]
 
 Zero dependencies · Shadow DOM · 4 themes (light/dark/sepia/auto) · [Widget docs](https://widget.timefyi.com)
 
+
+## Recently Updated (0.1.4)
+
+Latest content from [https://timefyi.com](https://timefyi.com):
+- [Seoul timezone](https://timefyi.com/timezone/asia-seoul/)
+- [Tokyo current time](https://timefyi.com/city/tokyo/)
+- [Time zone converter](https://timefyi.com/tools/timezone-converter/)
+
+Version bumped 2026-05-27 as part of [SEO recovery refresh](https://github.com/dobestan).
+
 ## License
 
 MIT
