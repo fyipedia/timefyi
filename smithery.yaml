@@ -1,0 +1,10 @@
+# Smithery configuration for timefyi
+# https://smithery.ai/docs/build/project-config
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: []
+    properties: {}
+  commandFunction: |-
+    config => ({ command: 'uvx', args: ['--from', 'timefyi[mcp]', 'python', '-m', 'timefyi.mcp_server'] })

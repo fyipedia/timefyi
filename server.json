@@ -1,0 +1,41 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.fyipedia/timefyi",
+  "description": "Pure Python timezone engine \u2014 current time, time differences, business hours overlap",
+  "version": "0.1.3",
+  "repository": {
+    "url": "https://github.com/fyipedia/timefyi",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "timefyi",
+      "version": "0.1.3",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeArguments": [
+        {
+          "type": "named",
+          "name": "--from",
+          "value": "timefyi[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "python"
+        },
+        {
+          "type": "positional",
+          "value": "-m"
+        },
+        {
+          "type": "positional",
+          "value": "timefyi.mcp_server"
+        }
+      ]
+    }
+  ]
+}
